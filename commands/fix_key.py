@@ -107,7 +107,7 @@ class FixKeyView(discord.ui.View):
             success, message = await self.cog.reset_hwid(user_key_value)
 
             if success:
-                next_reset = int((datetime.now(UTC) + timedelta(days=3)).timestamp())
+                next_reset = int((datetime.now(UTC) + timedelta(days=1)).timestamp())
                 await modal_interaction.followup.send(
                     (
                         "HWID reset successful!\n"
@@ -266,7 +266,7 @@ class FixKey(commands.Cog):
                 title="Troubleshooting Key Issues",
                 description=(
                     "If your key does not work, please attempt the following to reset it:\n"
-                    "- Press the Reset HWID button below and enter your key. (free keys have a 3 day cooldown)\n"
+                    "- Press the Reset HWID button below and enter your key.\n"
                     "- After resetting, immediately try your key again to set the new HWID.\n"
                     "- If it *still* doesn't work, create a ticket in <#1508165069635063998>.\n"
                     "### You are going to be banned if you make a ticket and leave it blank."
