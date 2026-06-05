@@ -10,9 +10,9 @@ class ExecutorsView(discord.ui.View):
         super().__init__(timeout=300)
 
         self.add_item(discord.ui.Button(
-            label="Purchase Lifetime",
+            label="Purchase",
             style=discord.ButtonStyle.link,
-            url="https://lumin.rest/key/",
+            url="https://lumin-rocks.mysellauth.com/",
             row=0,
         ))
 
@@ -21,7 +21,7 @@ class ExecutorsView(discord.ui.View):
         self, interaction: discord.Interaction, button: discord.ui.Button
     ) -> None:
         _ = button
-        script = '```lua\nloadstring(game:HttpGet("https://lumin.rest/"))()\n```'
+        script = '```lua\nloadstring(game:HttpGet("https://lumin.rocks/"))()\n```'
         await interaction.response.send_message(script, ephemeral=True)
 
 
